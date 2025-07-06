@@ -1,0 +1,46 @@
+.suggList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #ccc;
+    max-height: 150px;
+    overflow-y: auto;
+    background: white;
+    position: absolute;
+    z-index: 10;
+}
+
+.suggList li {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.suggList li:hover {
+    background: #eee;
+}
+
+.selected-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.selected-list li {
+    background: #f3f3f3;
+    border: 1px solid #ccc;
+    border-radius: 16px;
+    padding: 4px 10px;
+    display: flex;
+    align-items: center;
+}
+.selected-list button {
+    margin-left: 6px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: #d9534f;
+    font-weight: bold;
+}

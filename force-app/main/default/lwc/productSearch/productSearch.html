@@ -1,0 +1,31 @@
+<template>
+    <lightning-card title="Product External ID Search">
+        <lightning-input type="text" label="Search External IDs" placeholder="Type External ID..." onkeyup={handleKeyUp}
+            value={inputValue}>
+        </lightning-input>
+
+        <template if:true={suggestions}>
+            <ul class="suggList">
+                <template for:each={suggestions} for:item="product">
+                    <li key={product.Id} data-externalid={product.ExternalId__c} data-name={product.Name} onclick={selectSuggestion}>
+                        {product.ExternalId__c} - {product.Name}
+                    </li>
+
+                </template>
+            </ul>
+        </template>
+
+        <template if:true={selectedProducts.length}>
+            <p>Selected External IDs:</p>
+            <ul class="selected-list">
+                <template for:each={selectedProducts} for:item="product">
+                    <li key={product.externalId}>
+                        {product.externalId} - {product.name}
+                        <button type="button" data-extid={product.externalId} onclick={removeExternalId}>x</button>
+                    </li>
+                </template>
+            </ul>
+        </template>
+        
+    </lightning-card>
+</template>
